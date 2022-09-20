@@ -23,6 +23,7 @@ class SplashFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentSplashBinding.inflate(layoutInflater)
         val view = binding.root
+        val spalshTime : Long = 3000
 
         Handler(Looper.myLooper()!!).postDelayed({
          spS = requireContext().getSharedPreferences("User",Context.MODE_PRIVATE)
@@ -32,7 +33,7 @@ class SplashFragment : Fragment() {
                 if (spS.getString("Username","").equals(""))
                     findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
          }
-        },3000)
+        }, spalshTime)
         return view
     }
 }
